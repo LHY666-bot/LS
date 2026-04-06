@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>喜欢你的100个原因</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('hcy.webp');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(240, 98, 146, 0.3), rgba(255, 182, 193, 0.2));
+      z-index: 1;
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 800px;
+      margin: 30px auto;
+      box-shadow: 0 8px 32px rgba(240, 98, 146, 0.1);
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(240, 98, 146, 0.2);
+    }
+
+    h1 {
+      color: #F06292;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 4px rgba(240, 98, 146, 0.3);
+    }
+
+    .reasons-list {
+      list-style-position: inside;
+      line-height: 1.8;
+      margin-left: 20px;
+    }
+
+    .reasons-list li {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin: 30px auto;
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .love-button {
+      padding: 15px 40px;
+      font-size: 18px;
+      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .love-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+      background: linear-gradient(135deg, #ff1493, #ff69b4);
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(240, 98, 146, 0.6);
+      transform: rotate(-45deg);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(240, 98, 146, 0.6);
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 10px;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(100vh) rotate(-45deg) scale(0.5);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100px) rotate(-45deg) scale(1);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <div class="content">
+    <h1>喜欢你的100个原因</h1>
+    <ol class="reasons-list">
+      <li>有趣，和你在一起永远不会无聊</li>
+      <li> 善良，总是为别人着想</li>
+      <li> 努力，对未来有一定的想法</li>
+      <li> 可爱，在我眼中一些小举动能萌化我的心</li>
+      <li> 善良，总是为别人着想</li>
+      <li> 努力，对未来有一定的想法</li>
+      <li> 可爱，在我眼中一些小举动能萌化我的心</li>
+      <li> 聪明，总能想到很好的解决办法</li>
+      <li> 坚强，遇到困难从不轻易放弃</li>
+      <li> 体贴，总是能注意到我的情绪变化</li>
+      <li> 真诚，从不虚伪做作</li>
+      <li> 有趣，和你永远不会无聊</li>
+      <li> 独立，有自己的想法和主见</li>
+      <li> 认真做事时的侧脸很好看</li>
+      <li> 你很体贴，总是能注意到我的情绪变化</li>
+      <li> 头发散下来温柔，扎起来很清爽</li>
+      <li> 你一出现，空气都变甜</li>
+      <li> 相相处时不用刻意伪装</li>
+      <li> 跟你待在一起很安心</li>
+      <li> 有品味，审美在线</li>
+      <li> 不断进步，努力变好</li>
+      <li> 支持我想做的事</li>
+      <li> 你的眼睛，明亮有神又温柔</li>
+      <li> 你的鼻子，挺翘美丽动人</li>
+      <li> 你的眉毛，眉如墨画</li>
+      <li> 你是独一无二的存在</li>
+      <li> 让我平淡生活有了色彩</li>
+      <li> 让我想变成更好的人，给你幸福</li>
+      <li> 是我想守护一生的人</li>
+      <li> 我拿错麦当劳了，你会安慰我</li>
+      <li> 大大方方的，对谁都客气</li>
+      <li> 不攀比，知足常乐</li>
+      <li> 内心丰盈，不依赖别人</li>
+      <li> 温柔且坚定，柔软又强大</li>
+      <li> 有底线，有原则</li>
+      <li> 尊重他人，也尊重自己</li>
+      <li> 三观正，待人有分寸</li>
+      <li> 有爱心，喜欢小动物</li>
+      <li> 会带我去吃我没吃过的东西</li>
+      <li> 喜欢叫我瓜儿，很特别的</li>
+      <li> 执行力强</li>
+      <li> 吃东西细嚼慢咽，会带着我一起，不让我吃快</li>
+      <li> 拍照会带着我一起出镜</li>
+      <li> 喜欢华晨宇，他唱歌很好听啊</li>
+      <li> 能融入各种环境，不怯场</li>
+      <li> 纪念日会给我买巴斯克吃</li>
+      <li> 想吃什么会给我说</li>
+      <li> 默契感十足</li>
+      <li> 对我的家人很上心</li>
+      <li> 不会扫兴</li>
+      <li> 只想把所有温柔都给你</li>
+      <li> 生理期要给你买暖宝宝</li>
+      <li> 生理期喜欢喝烤黑糖波波牛乳茶</li>
+      <li> 让我懂得什么是爱与被爱</li>
+      <li> 你的存在本身就是美好</li>
+      <li> 初见心动，久处仍心跳</li>
+      <li> 有共同看过的日漫</li>
+      <li> 追剧时很安静</li>
+      <li> 想和你一起看遍世间风景</li>
+      <li> 想和你定居南京</li>
+      <li> 想和你一起踏上冰岛</li>
+      <li> 想给你做一辈子的鱼</li>
+      <li> 想包容你的一切小脾气，小心思</li>
+      <li> 我抖音的一个随意点赞你也会记在心上</li>
+      <li> 你给我带来了无限的快乐</li>
+      <li> 热爱美食，享受平凡的烟火气</li>
+      <li> 愿意把收拾的任务交给我</li>
+      <li> 给我买宝宝霜让皮肤不干燥</li>
+      <li> 与你一起去看华晨宇火星演唱会</li>
+      <li> 每天起床第一眼想见到的人是你</li>
+      <li> 拍照时的自然美丽动人</li>
+      <li> 会给我买一箱酸奶喝</li>
+      <li> 会阻止我抖腿</li>
+      <li> 虽然不会主动表达爱意，但我很满足</li>
+      <li> 每次见到你我就会开心，会笑</li>
+      <li> 永远在减肥的路上</li>
+      <li> 特别爱吃板栗板栗</li>
+      <li> 永远让我省着点钱花</li>
+      <li> 喜欢五颜六色的花</li>
+      <li> 会让我吃葱吃香菜</li>
+      <li> 让我陪着跑步</li>
+      <li> 不怕幸苦去兼职</li>
+      <li> 提意见会让我闭嘴</li>
+      <li> 鼓励我学会开车</li>
+      <li> 打球累了会给我发红包买水喝</li>
+      <li> 我以为你不要我时会抱抱我安慰我</li>
+      <li> 想给你做很多很多甜品吃</li>
+      <li> 想陪你一起做美甲，打耳洞</li>
+      <li> 时不时会给我发自拍，让我激动</li>
+      <li> 从来不会嘲笑我什么</li>
+      <li> 我脑子一转就知道我在想什么</li>
+      <li> 是我愿意把生活费安心上交的人</li>
+      <li> 我做的菜少了点味道也会吃下去，不会埋怨我</li>
+      <li> 做事永远乐观积极</li>
+      <li> 愿意倾听我讲的事</li>
+      <li> 没有任何不良嗜好</li>
+      <li> 约会时喜欢挽着我的胳膊</li>
+      <li> 会管住我，让我少吃点小吃</li>
+      <li> 喜欢你，不需要理由</li>
+      <li> 往后余生，满心满眼都是你</li>
+    </ol>
+
+  </div>
+
+
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDelay = Math.random() * 6 + 's';
+      heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
+      return heart;
+    }
+
+    function initHearts() {
+      const heartsContainer = document.getElementById('hearts');
+      const heartCount = 20;
+
+      for (let i = 0; i < heartCount; i++) {
+        const heart = createHeart();
+        heartsContainer.appendChild(heart);
+      }
+    }
+
+    window.addEventListener('load', initHearts);
+  </script>
+</body>
+
+</html>

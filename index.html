@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>遇见便是最好的一切</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('hcy.webp');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(240, 98, 146, 0.3), rgba(255, 182, 193, 0.2));
+      z-index: 1;
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 600px;
+      box-shadow: 0 8px 32px rgba(255, 105, 180, 0.1);
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(255, 105, 180, 0.2);
+    }
+
+    h1 {
+      color: #F06292;
+      font-size: 2.8em;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(240, 98, 146, 0.3);
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .love-button {
+      padding: 15px 40px;
+      font-size: 18px;
+      background: linear-gradient(135deg, #F06292, #E91E63);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(240, 98, 146, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .love-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(240, 98, 146, 0.6);
+      background: linear-gradient(135deg, #E91E63, #F06292);
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(240, 98, 146, 0.6);
+      transform: rotate(-45deg);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(240, 98, 146, 0.6);
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 10px;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(100vh) rotate(-45deg) scale(0.5);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100px) rotate(-45deg) scale(1);
+        opacity: 0;
+      }
+    }
+
+    #content-frame {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      z-index: 10;
+    }
+
+    .back-button {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 11;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <div class="content" id="home-content">
+    <h1>FOR YOU</h1>
+    <div class="button-container">
+      <button class="love-button" onclick="loadContent('content.html')">我们的故事</button>
+      <button class="love-button" onclick="loadContent('album.html')">我们的相册</button>
+      <button class="love-button" onclick="loadContent('reasons.html')">喜欢你的100个原因</button>
+    </div>
+  </div>
+
+  <iframe id="content-frame" src=""></iframe>
+  <button class="love-button back-button" id="back-button" onclick="showHome()">返回首页</button>
+
+  <audio id="background-music" src="曾沛慈 - 一个人想着一个人.mp3" loop preload="auto">
+    您的浏览器不支持音频播放。
+  </audio>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDelay = Math.random() * 6 + 's';
+      heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
+      return heart;
+    }
+
+    function initHearts() {
+      const heartsContainer = document.getElementById('hearts');
+      const heartCount = 20;
+
+      for (let i = 0; i < heartCount; i++) {
+        const heart = createHeart();
+        heartsContainer.appendChild(heart);
+      }
+    }
+
+    function playMusic() {
+      const music = document.getElementById('background-music');
+      console.log('尝试播放音乐...');
+      console.log('音频元素:', music);
+      console.log('音频源:', music.src);
+      music.play().then(() => {
+        console.log('音乐播放成功');
+      }).catch(error => {
+        console.log('播放错误:', error);
+        console.log('错误类型:', error.name);
+        console.log('错误消息:', error.message);
+      });
+    }
+
+    function loadContent(page) {
+      const frame = document.getElementById('content-frame');
+      const homeContent = document.getElementById('home-content');
+      const backButton = document.getElementById('back-button');
+
+      // 点击按钮时播放音乐
+      playMusic();
+
+      frame.src = page;
+      frame.style.display = 'block';
+      homeContent.style.display = 'none';
+      backButton.style.display = 'block';
+    }
+
+    function showHome() {
+      const frame = document.getElementById('content-frame');
+      const homeContent = document.getElementById('home-content');
+      const backButton = document.getElementById('back-button');
+
+      frame.style.display = 'none';
+      frame.src = '';
+      homeContent.style.display = 'block';
+      backButton.style.display = 'none';
+    }
+
+    window.addEventListener('load', function () {
+      initHearts();
+      // 尝试自动播放
+      playMusic();
+      // 监听用户点击事件，触发播放
+      document.addEventListener('click', playMusic, { once: true });
+    });
+  </script>
+</body>
+
+</html>

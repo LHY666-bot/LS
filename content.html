@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>正文</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('hcy.webp');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(240, 98, 146, 0.3), rgba(255, 182, 193, 0.2));
+      z-index: 1;
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 800px;
+      margin: 30px auto;
+      box-shadow: 0 8px 32px rgba(240, 98, 146, 0.1);
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(240, 98, 146, 0.2);
+    }
+
+    h1 {
+      color: #F06292;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 4px rgba(240, 98, 146, 0.3);
+    }
+
+    h2 {
+      color: #F06292;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #333;
+      text-align: justify;
+      text-indent: 2em;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin: 30px auto;
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .love-button {
+      padding: 15px 40px;
+      font-size: 18px;
+      background: linear-gradient(135deg, #ff69b4, #ff1493);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .love-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+      background: linear-gradient(135deg, #ff1493, #ff69b4);
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(240, 98, 146, 0.6);
+      transform: rotate(-45deg);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: rgba(240, 98, 146, 0.6);
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 10px;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(100vh) rotate(-45deg) scale(0.5);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100px) rotate(-45deg) scale(1);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <div class="content">
+    <h2>一些陈述</h2>
+    <p>
+      第一见到你，是在大一下小学期的课程上，虽然我们没有来往，但是我算是对你有了好感，也许就是有点怦然心动吧。结果缘分很奇妙，我俩还分到了一个班，我当时看到分班的结果，不断地确认这个李欣玥是不是一起上小学期课程的李欣玥，没有意外地就是一个人。我们真正产生交集是因为一节选修课，
+      一开始我还以为你有男朋友，因为有一次上概率论我看到你和一个男生坐一起的，而且你也这么漂亮，总觉得理所应当。但我还是鼓起勇气问了一句，发现你是单身，你说你是单性恋的时候，我其实有点失落，就像是明明啥都没发生，但心里就是空了一块，此刻我确定我就是喜欢上你了，我的心从未如此心跳过。
+      那段时间，你就像一弯月亮映射在我的人生，给我带来一束朦胧皎白的光。虽然我们真正意义上认识才不到10天，但刚好碰上国庆节，我抑制不住内心的想法，还是选择在高铁上与你间接表白，当时什么都不敢去想，冲就是了。好在上天眷顾我，你思考许久也是同意了，从那刻起，我便下定决心用尽我的一切去呵护你，
+      保护你，支持你，尊重你，喜欢你。后来啊后来，我们也如我所羡慕的情侣那般恩爱，虽然我这个榆木脑袋也会经常惹你生气，但我也会学着去改。我认为天下没有生来就合适的人，你的好我赞扬，你的坏我包容，这是我的基本义务。
+    </p>
+    <p>
+      在这段恋爱中，我自己有很多做的不好的地方。1：我明明知道你是个自强的女生，明明知道你不喜欢很粘人的，但我这个问题从一开始就贯穿了整个关系。2：有些时候你不想倾诉的事情，想一个人消化，可我却像个烦人精一样一直追着你问，换谁来都会厌烦。3:我的情商低，有时一些无意举动，会让你感到很不舒服，我非常愧疚。
+      4：我非常地自责自己成为了你口中的和上一个男生一样的人，没有做到自己的职责。5：我的心思太重了，不该去打扰到你的朋友或者你周围的人，尤其是这一点，我向你道歉，是我没有做到位，没有顾及到你的感受，对不起。6：现在想想我寒假的行为确实很掉分，每天缠着你打视频，明明你都不想打了，我却还是像个愣头青一样
+      给你打过去，让你感到厌烦。这些问题我既然说出来了，我就一定会去改，我会去改变我的行为，我会去改变我的态度。
+    </p>
+    <p>
+      我俩分开也快一个月了，我每天都有在想，如果我们没有分开，这时候会做什么呢？是牵手散步还是坐着闲谈未来？真希望我们从未分开。我不是没有事情做，而是在我心里，你永远是第一位，哪怕我们已经分开了，在我心里，爱一个人就该始终只爱一个人。分开后的人都希望对方下一个对象会更好，但我并不希望，我也是有私心的，我怎么可能眼睁睁看着
+      我最爱的人离我而去，哪怕你或许已经对我没有任何情感了，我依旧是想搏出一条哪怕只有渺茫的希望的路。我知道前段时间我的行为让你非常无语以及厌烦，我真的诚心道歉，我不该那么频繁地打扰你。我希望你在这段感情中是开心的，而不是身负重担的，我不想我的出现会给你带来任何的伤害。其实分手那天我把我一生做过的坏事都想了一遍，但也没有找到罪大恶极的，但我还是不想错过你。
+    </p>
+    <p>
+      相处这么久，我能看出来你是个很焦虑的人，焦虑学业，焦虑工作，焦虑未来。在现在这个环境下，你的焦虑并无道理，但也请不要过度焦虑，你要相信自己做什么都能成功，不要贬低自己。有时也感觉自己很无能，在你感到焦虑时不能帮上你什么，或是我好心办了坏事。
+    </p>
+    <p>
+      最后，我的答案是，李欣玥，我爱你，我不愿就此撒手。以及我想对你说：谢谢你出现在我的生命里，让我的世界变得如此美好。每一张照片都记录着我们共同的回忆，每一次相处都让我更加确定，你就是我想要守护一生的人，哪怕已成“陌生人”，如果有天我不爱你了，你依然会是我想要守护的人。
+    </p>
+  </div>
+
+
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDelay = Math.random() * 6 + 's';
+      heart.style.animationDuration = (Math.random() * 2 + 4) + 's';
+      return heart;
+    }
+
+    function initHearts() {
+      const heartsContainer = document.getElementById('hearts');
+      const heartCount = 20;
+
+      for (let i = 0; i < heartCount; i++) {
+        const heart = createHeart();
+        heartsContainer.appendChild(heart);
+      }
+    }
+
+    window.addEventListener('load', initHearts);
+  </script>
+</body>
+
+</html>
